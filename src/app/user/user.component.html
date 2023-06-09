@@ -18,16 +18,24 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form (ngSubmit)="userLogin()">
-        <h3>Login Here</h3>
+    <form *ngIf="user">
+        <h3>Hello {{ user.firstname}}</h3>
 
-        <label for="username">Username</label>
-        <input type="text" [(ngModel)]="user.email" placeholder="Email" id="email" name="email">
+        <label for="first-name">First Name : {{ user.firstname }}</label>
+        <label for="first-name">Last Name : {{ user.lastname }}</label>
 
-        <label for="password">Password</label>
-        <input type="password" [(ngModel)]="user.password" placeholder="Password" id="password" name="password">
-        <button type="submit" routerLink="/user">Log In</button>
-        <button type="submit" routerLink="/register">Register</button>
+
+        <label for="email">Email : {{ user.email }}</label>
+
+        <label for="homes">Your Homes</label>
+
+
+        <label for="addHome">Add you home</label>
+        <button type="submit" routerLink="/addhome">Add Home</button>
+
+
+        <button type="submit" routerLink="/home">Home Page</button>
+
 
     </form>
 </body>

@@ -1,15 +1,27 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Component, NgModule, inject } from '@angular/core';
+import { ActivatedRouteSnapshot, Router, RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
+
+const loggedGuard = (route: ActivatedRouteSnapshot) => {
+  const router = inject(Router);
+  if (!localStorage.getItem("token")) {
+    router.navigateByUrl("/login");
+    return true;
+  } else {
+    return true;
+  }
+}
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [loggedGuard]
   },
   {
     path: 'register',
@@ -18,6 +30,11 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+    canActivate: [loggedGuard]
   },
   {
   path: 'not-found',

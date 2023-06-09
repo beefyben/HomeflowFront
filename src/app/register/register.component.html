@@ -21,21 +21,20 @@
     <form>
         <h3>Register here</h3>
         <label for="first-name">First Name</label>
-        <input type="text" placeholder="First Name" id="first-name">
+        <input type="text" [(ngModel)]="user.firstname" [ngModelOptions]="{standalone: true}" placeholder="First Name" id="first-name">
+
 
         <label for="last-name">Last Name</label>
-        <input type="text" placeholder="Last Name" id="last-name">
+        <input type="text" [(ngModel)]="user.lastname" [ngModelOptions]="{standalone: true}" placeholder="Last Name" id="last-name">
 
         <label for="username">Username</label>
-        <input type="text" placeholder="Username" id="username">
+        <input type="text" [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}" placeholder="Email" id="username">
 
-        <label for="email">Email</label>
-        <input type="text" placeholder="Email" id="Email">
 
         <label for="password">Password</label>
-        <input type="password" placeholder="Password" id="password">
+        <input type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" placeholder="Password" id="password">
 
-        <button routerLink="/login" class="btn">Register</button>
+        <button (click)="userRegister()" class="btn">Register</button>
 
     </form>
 </body>
