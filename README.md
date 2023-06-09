@@ -1,4 +1,9 @@
+
+
 # HomemangerFront
+
+# Lien qui donne la marche a suivre pour angular (connexion et register) :
+Le lien : https://jasonwatmore.com/post/2022/11/29/angular-14-user-registration-and-login-example-tutorial#account-register-component-html
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.4.
 
