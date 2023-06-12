@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Design by foolishdeveloper.com -->
+
+<head>
+
+    <title>HomeFlow</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form (ngSubmit)="homeAdding()">
+        <h3>Add your Home here</h3>
+        <label for="homename">Home Name</label>
+        <input type="text" [(ngModel)]="home.homename" [ngModelOptions]="{standalone: true}" placeholder=" Main house, Holyday house..." id="housename">
+
+
+        <label for="homename">Home address</label>
+        <input type="text" [(ngModel)]="home.homeaddress" [ngModelOptions]="{standalone: true}" placeholder="Home address" id="homeaddress">
+        <label for="firstdatee">Date of begining</label>
+        <input type="text" [(ngModel)]="home.homefirstdate" [ngModelOptions]="{standalone: true}" placeholder="01/02/20223" id="homefirstdate">
+        <label for="homeaddress">Date of leaving</label>
+        <input type="text" [(ngModel)]="home.homelastdate" [ngModelOptions]="{standalone: true}" placeholder="07/02/2023" id="homelastdate">
+        <div class="Animal">
+            <label for="Animal">Annimal  </label>
+            <mat-checkbox [(ngModel)]="home.noanimal" [ngModelOptions]="{standalone: true}" labelPosition='before' color="primary">No Animals?</mat-checkbox>
+            <mat-checkbox [(ngModel)]="home.feedanimal" [ngModelOptions]="{standalone: true}" labelPosition='before' color="primary">Feed animal ?</mat-checkbox>
+        </div>
+
+
+        <div class="Plants">
+            <label for="Plants">Plants  </label>
+            <mat-checkbox [(ngModel)]="home.waterplant" [ngModelOptions]="{standalone: true}" labelPosition='before' color="primary">Water the plant ?</mat-checkbox>
+        </div>
+        <div class="Party">
+            <label for="Party">Party  </label>
+            <mat-checkbox [(ngModel)]="home.noparty" [ngModelOptions]="{standalone: true}" labelPosition='before' color="primary">No Party ?</mat-checkbox>
+            <mat-checkbox [(ngModel)]="home.nosound" [ngModelOptions]="{standalone: true}" labelPosition='before' color="primary">No Sound after 11pm ?</mat-checkbox>
+
+        </div>
+
+
+        <button (click)="homeAdding()" class="btn">AddHome</button>
+
+
+    </form>
+</body>
+
+</html>

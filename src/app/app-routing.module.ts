@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
+import { AddhomeComponent } from './addhome/addhome.component';
 
 const loggedGuard = (route: ActivatedRouteSnapshot) => {
   const router = inject(Router);
@@ -23,6 +24,7 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [loggedGuard]
   },
+
   {
     path: 'register',
     component:RegisterComponent
@@ -31,11 +33,17 @@ const routes: Routes = [
     path:'login',
     component: LoginComponent
   },
+
   {
     path: 'user',
-    component: UserComponent,
-    canActivate: [loggedGuard]
+    component: UserComponent
+
   },
+  {
+    path: 'addhome',
+    component: AddhomeComponent
+  },
+
   {
   path: 'not-found',
   component: NotFoundComponent

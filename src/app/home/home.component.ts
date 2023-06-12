@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { User } from '../Model/user';
+import { UService } from '../Service/u.service';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  public user?: User;
 
+  constructor(private readonly uService: UService, ) {}
+
+  async ngOnInit() {
+    this.user = await this.uService.getUser();
+  }
 }
+
+
+
+

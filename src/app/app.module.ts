@@ -18,6 +18,8 @@ import {
 	IgxSliderModule
  } from "igniteui-angular";
 import { UserComponent } from './user/user.component';
+import { AddhomeComponent } from './addhome/addhome.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { UserComponent } from './user/user.component';
     LoginComponent,
     RegisterComponent,
     UserComponent,
+    AddhomeComponent,
+
 
   ],
   imports: [
@@ -39,10 +43,12 @@ import { UserComponent } from './user/user.component';
 	  IgxCarouselModule,
 	  IgxSliderModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 
 })
 export class AppModule { }

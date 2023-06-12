@@ -4,7 +4,7 @@
 
 <head>
 
-    <title>Homemanager</title>
+    <title>HomeFlow</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -23,5 +23,44 @@
         <div class="shape"></div>
 
         <div class="shape"></div>
+
+    </div>
+    <form *ngIf="user">
+        <h3>Hello {{ user.firstname}}</h3>
+    </form>
+    <h1>Choose an home</h1>
+
+    <div class="homes">
+        <h1>Choose an home</h1>
+        <div class="photo">
+            <div id="home1">
+                <h3>nom maison 1</h3>
+
+
+
+                <img src="https://vss.astrocenter.fr/habitatpresto/pictures/29886245-adobestock-69757727.jpeg" height="100%" width="100%">
+
+
+            </div>
+            <div id="home2">
+                <h3> nom maison 2</h3>
+                <img src="https://www.maisons-rennaises.fr/wp-content/uploads/23526-EXT-S1_1800-px.jpg" height="93%" width="93%">
+
+
+
+            </div>
+            <div id="home3">
+                <h3>nom maison 3</h3>
+                <img src="https://www.laconstructionlyonnaise.fr/wp-content/uploads/2017/05/construction-lyonnaise-1600x900.jpg" height="100%" width="102%">
+
+            </div>
+            <div class="home" *ngFor="let home of []">
+            </div>
+        </div>
     </div>
 </body>
+
+
+
+
+</html>
