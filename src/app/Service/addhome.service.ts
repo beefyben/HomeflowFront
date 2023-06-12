@@ -14,7 +14,7 @@ export class AddHomeService {
 
   async addHome(home: Home) {
     console.log(home)
-    return await lastValueFrom(this.httpClient.post<Home>(`${this.baseUrl}/addhome/homeadd`, home));
+    return await lastValueFrom(this.httpClient.post<Home>(`${this.baseUrl}/homeadd/addhome`, home));
   }
 
 
